@@ -12,7 +12,6 @@ Install the required python packages
 
 ### `pip install flask-restful flask-cors`
 
-In the project directory, you can run:
 
 # To run
 
