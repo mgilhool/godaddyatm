@@ -1,6 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a demo project for the Temp Dev position.
+It is a very basic ATM program.  It asks the user to log in, reaches out to a backend to pull the account details if they exist, and then allows the user to check their balance or log out.  
 
-## Available Scripts
+I just started using React, bootstrap javascript and git for this project, and my python is rusty, so I hope your brought a fork, because spaghetti code abounds:( The design also does not match up, but it does at least function  
+
+## To build
 
 In the project directory, you can run:
 
@@ -37,8 +40,9 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## To Run
 
+### `npm run eject`
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
