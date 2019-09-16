@@ -23,12 +23,10 @@ import React, { Component } from "react";
 const NavBar = ({ accountInfo, onLogout }) => {
   console.log("NavBar - Rendered");
   return (
-    <nav className="navbar-right ml-auto">
-      <a className="navbar-right" href="#">
-        <span className="badge badge-pill badge-secondary">
-          {accountInfo.json.accountnumber}
-          <button onClick={onLogout}>Logout</button>
-        </span>
+    <nav className="navbar-right mr-auto">
+      <span className="">{accountInfo.json.accountnumber}</span>
+      <a href="/" onClick={onLogout}>
+        Logout
       </a>
     </nav>
   );

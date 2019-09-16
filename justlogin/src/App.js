@@ -11,6 +11,7 @@ import {
 import Route from "react-router-dom/Route";
 import LoginScreen from "./components/loginscreen";
 import MainMenu from "./components/mainmenu";
+import { createBrowserHistory } from "history";
 
 class App extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class App extends Component {
       isLoaded: false,
       isLoggedIn: false
     });
+    return this.props.history.push("/");
   };
 
   render() {

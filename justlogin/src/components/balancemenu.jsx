@@ -1,0 +1,30 @@
+import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Link,
+  NavLink,
+  Redirect,
+  Prompt
+} from "react-router-dom";
+
+class BalanceMenu extends Component {
+  constructor(props) {
+    super(props);
+    const currentAccount = this.props.acccountInfo;
+    this.state = { accountInfo: currentAccount };
+    console.log("balanceMenu - constructor", this.state);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Account Balance</h1>
+        Acct# {this.state.accountInfo.json.accountnumber}{" "}
+        {this.state.accountInfo.json.balance}
+        <Link to="/">Go Back</Link>
+      </div>
+    );
+  }
+}
+
+export default BalanceMenu;

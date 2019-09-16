@@ -1,5 +1,14 @@
 import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Link,
+  NavLink,
+  Redirect,
+  Prompt
+} from "react-router-dom";
+import Route from "react-router-dom/Route";
 import NavBar from "./navbar";
+import BalanceMenu from "./balancemenu";
 
 class MainMenu extends Component {
   constructor(props) {
@@ -51,8 +60,14 @@ class MainMenu extends Component {
           accountInfo={this.state.accountInfo}
           onLogout={this.handleLogout.bind(this)}
         />
-        <h1>Logged In! {this.state.accountInfo.json.accountnumber}</h1>
-        <h2>Your Balance is: {this.state.accountInfo.json.balance}</h2>
+        <Router>
+          <Route
+            path="/balance"
+            exact
+            strict
+            render={() => <BalanceMenu acccountInfo={this.state.accountInfo} />}
+          />
+        </Router>
       </React.Fragment>
       //<button onClick={() => this.props.onLogout()}>Logout</button>   another logout for testing
     );
