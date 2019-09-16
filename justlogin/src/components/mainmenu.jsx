@@ -25,7 +25,7 @@ class MainMenu extends Component {
 
   handleLogout() {
     {
-      () => this.props.onLogout();
+      this.props.onLogout();
     }
   }
 
@@ -49,12 +49,12 @@ class MainMenu extends Component {
       <React.Fragment>
         <NavBar
           accountInfo={this.state.accountInfo}
-          onLogout={this.handleLogout}
+          onLogout={this.handleLogout.bind(this)}
         />
         <h1>Logged In! {this.state.accountInfo.json.accountnumber}</h1>
         <h2>Your Balance is: {this.state.accountInfo.json.balance}</h2>
-        <button onClick={() => this.props.onLogout()}>Logout</button>
       </React.Fragment>
+      //<button onClick={() => this.props.onLogout()}>Logout</button>   another logout for testing
     );
   }
 }
