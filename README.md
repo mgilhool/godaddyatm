@@ -1,8 +1,7 @@
 This is a demo project for the Temp Dev position.
 It is a very basic ATM program. It asks the user to log in, reaches out to a backend to pull the account details if they exist, and then allows the user to check their balance or log out.
 
-I just started using React, bootstrap javascript and git for this project, and my python is rusty, so I hope your brought a fork, because spaghetti code abounds :( The design also does not match up, but it does at least function
-
+ I hope your brought a fork, because spaghetti code abounds :(   The design also does not match up, but it does at least function. 
 # Prep
 
 Install the required npm server
