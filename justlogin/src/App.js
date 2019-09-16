@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import Route from "react-router-dom/Route";
 import LoginScreen from "./components/loginscreen";
-import MainMenu from "./components/mainmenu";
+import MainScreen from "./components/mainscreen";
 import { createBrowserHistory } from "history";
 
 class App extends Component {
@@ -51,7 +51,7 @@ class App extends Component {
             strict
             render={() =>
               this.state.isLoggedIn === true ? (
-                <MainMenu
+                <MainScreen
                   acccountInfo={this.state.accountInfo}
                   onLogout={this.handleLogout}
                 />

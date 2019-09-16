@@ -89,7 +89,11 @@ class LoginScreen extends Component {
                 <span>
                   <input
                     type="number"
-                    className="form-control m-3"
+                    className={
+                      this.state.accountInfo === "Account not found"
+                        ? "form-control is-invalid m-3"
+                        : "form-control m-3"
+                    }
                     id="accountNumberInput"
                     placeholder="Account Number"
                     ref={element => {
@@ -99,7 +103,9 @@ class LoginScreen extends Component {
                     autoFocus
                   />
                   {this.state.accountInfo === "Account not found" ? (
-                    <h1>Unknown User</h1>
+                    <span style={{ color: "red" }}>
+                      <h3>Unknown User</h3>
+                    </span>
                   ) : (
                     <h1></h1>
                   )}

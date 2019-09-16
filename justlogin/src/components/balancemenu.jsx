@@ -20,7 +20,15 @@ class BalanceMenu extends Component {
       <div>
         <h1>Account Balance</h1>
         Acct# {this.state.accountInfo.json.accountnumber}{" "}
-        {this.state.accountInfo.json.balance}
+        <span
+          style={{
+            color: this.state.accountInfo.json.balance >= 0 ? "green" : "red"
+          }}
+        >
+          {this.state.accountInfo.json.balance >= 0
+            ? "$" + this.state.accountInfo.json.balance
+            : "-$" + this.state.accountInfo.json.balance * -1}
+        </span>
         <Link to="/">Go Back</Link>
       </div>
     );
