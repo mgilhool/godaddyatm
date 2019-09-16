@@ -62,5 +62,5 @@ class Atm(Resource):
 # print test.get(31038)
 
 api.add_resource(Atm, "/atm/<int:accountnumber>")
-app.run(debug=True)  # if you need debugging
-# app.run()
+# app.run(debug=True)  # if you need debugging
+app.run()
