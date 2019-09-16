@@ -1,3 +1,5 @@
+/* not using for now, didn't work
+
 import React, { Component } from "react";
 import {
   BrowserRouter as Router,
@@ -36,3 +38,4 @@ class BalanceMenu extends Component {
 }
 
 export default BalanceMenu;
+*/

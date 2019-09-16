@@ -1,3 +1,6 @@
+/* Not using for now - didn't work
+
+
 import React, { Component } from "react";
 import {
   BrowserRouter as Router,
@@ -29,3 +32,4 @@ class MainMenu extends Component {
 }
 
 export default MainMenu;
+*/

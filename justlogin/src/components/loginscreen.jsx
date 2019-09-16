@@ -6,24 +6,19 @@ class LoginScreen extends Component {
     this.state = { accountInfo: [], isLoaded: false, isLoggedIn: false };
   }
 
-  /*
-    componentDidMount() {
-      fetch("http://127.0.0.1:5000/atm/65275")
-        .then(res => res.json())
-        .then(json => {
-          this.setState({ isLoaded: true, accountInfo: json });
-          console.log(json);
-          console.log(typeof json);
-          console.log(typeof this.accountInfo);
-          console.log(this.accountInfo);
-        });
-    }
-  */
+  /*NOTES:
+Handles "authentication".  User will type and account number into the box.  Then the App will check with the backend to see if the account exists
+if it does, the state isLoggedIn will be updated to true, which will allow the mainscreen to be displayed.  IF the account number does not exist,
+it will let the user know and then can try again
+*/
 
   handleSubmit = e => {
+    /*When the submit button is pressed the app send the account number to the backend and the response will be "Account not found" or a
+    json object with account number and balance*/
+
     if (e) e.preventDefault();
     const number = this.input.value;
-    console.log("Inputted value was", number);
+    //console.log("Inputted value was", number);
     fetch("http://127.0.0.1:5000/atm/" + number)
       .then(res => res.json())
       .then(json => {
@@ -31,42 +26,16 @@ class LoginScreen extends Component {
         json === "Account not found"
           ? this.setState({ isLoggedIn: false })
           : this.props.onLogon({ json }); //On a "good" Login, this will make an event that is caught by App.js and updates the state of the main App
-        console.log(json);
-        console.log(typeof json);
-        console.log(typeof this.accountInfo);
-        console.log("State", this.state);
-        console.log("Props", this.props);
+        //console.log(json);
+        //console.log(typeof json);
+        //console.log(typeof this.accountInfo);
+        //console.log("State", this.state);
+        //console.log("Props", this.props);
       });
   };
-  /*Not using the method below, just for testing
-  onSubmit() {
-    fetch("http://127.0.0.1:5000/atm/65275")
-      .then(res => res.json())
-      .then(json => {
-        this.setState({ isLoaded: true, accountInfo: json });
-        console.log(json);
-        console.log(typeof json);
-        console.log(typeof this.accountInfo);
-        console.log(this.accountInfo);
-      });
-  }
-*/
+
   render() {
-    //const { accountInfo, isLoaded, onLogon } = this.props;
-    console.log("Top of render - props:", this.props);
-    //var { isLoaded, accountInfo } = this.state;
-    /*
-      if (!isLoaded) {
-        return <div>Loading....</div>;
-      } else {
-        return (
-          <div className="App">
-            Number: {accountInfo.accountnumber} | Balance: {items.balance}
-          </div>
-        );
-      }
-    }
-    */
+    //console.log("Top of render - props:", this.props);
 
     return (
       <div className="container">
