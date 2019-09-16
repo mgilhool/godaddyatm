@@ -1,5 +1,15 @@
+/* Not using for now - didn't work
+
+
 import React, { Component } from "react";
-import NavBar from "./navbar";
+import {
+  BrowserRouter as Router,
+  Link,
+  NavLink,
+  Redirect,
+  Prompt
+} from "react-router-dom";
+import Route from "react-router-dom/Route";
 
 class MainMenu extends Component {
   constructor(props) {
@@ -9,53 +19,17 @@ class MainMenu extends Component {
     console.log("MainMenu - constructor", this.state);
   }
 
-  /*
-    componentDidMount() {
-      fetch("http://127.0.0.1:5000/atm/65275")
-        .then(res => res.json())
-        .then(json => {
-          this.setState({ isLoaded: true, items: json });
-          console.log(json);
-          console.log(typeof json);
-          console.log(typeof this.items);
-          console.log(this.items);
-        });
-    }
-  */
-
-  handleLogout() {
-    {
-      () => this.props.onLogout();
-    }
-  }
-
   render() {
-    //var { isLoaded, items } = this.state;
-    /*
-      if (!isLoaded) {
-        return <div>Loading....</div>;
-      } else {
-        return (
-          <div className="App">
-            Number: {items.accountnumber} | Balance: {items.balance}
-          </div>
-        );
-      }
-    }
-    */
-
-    console.log("Main Menu render:", this.state);
     return (
       <React.Fragment>
-        <NavBar
-          accountInfo={this.state.accountInfo}
-          onLogout={this.handleLogout}
-        />
-        <h1>Logged In! {this.state.accountInfo.json.accountnumber}</h1>
-        <h2>Your Balance is: {this.state.accountInfo.json.balance}</h2>
-        <button onClick={() => this.props.onLogout()}>Logout</button>
+        <h2>Welcome Account {this.state.accountInfo.json.accountnumber}</h2>
+        <Link to={`/balance/${this.props}`}>
+          <button>Check Balance</button>
+        </Link>
       </React.Fragment>
     );
   }
 }
+
 export default MainMenu;
+*/
